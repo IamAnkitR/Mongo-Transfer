@@ -37,6 +37,10 @@ app.post("/transfer", async (req, res) => {
   }
 });
 
+app.get("/health", async (req, res) => {
+  res.send(`Server is up and running`);
+});
+
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
