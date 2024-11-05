@@ -5,7 +5,9 @@ const transferData = require("./transferData");
 const app = express();
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://mongo-transfer-jauwjpm80-iamankitrs-projects.vercel.app/",
+    ],
   })
 );
 app.use(express.json());
