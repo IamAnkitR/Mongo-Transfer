@@ -43,17 +43,19 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-4">MongoDB Data Transfer</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 sm:p-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center">
+        MongoDB Data Transfer
+      </h1>
 
-      <div className="flex gap-6">
-        <div className="flex flex-col">
+      <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl">
+        <div className="flex flex-col w-full sm:w-1/2">
           <input
             type="text"
             placeholder="Source URI"
             value={sourceUri}
             onChange={(e) => setSourceUri(e.target.value)}
-            className="mb-4 px-4 py-2 border rounded w-80"
+            className="mb-4 px-4 py-2 border rounded w-full"
           />
 
           <input
@@ -61,16 +63,16 @@ const App: React.FC = () => {
             placeholder="Source Database Name"
             value={sourceDbName}
             onChange={(e) => setSourceDbName(e.target.value)}
-            className="mb-4 px-4 py-2 border rounded w-80"
+            className="mb-4 px-4 py-2 border rounded w-full"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full sm:w-1/2">
           <input
             type="text"
             placeholder="Target URI"
             value={targetUri}
             onChange={(e) => setTargetUri(e.target.value)}
-            className="mb-4 px-4 py-2 border rounded w-80"
+            className="mb-4 px-4 py-2 border rounded w-full"
           />
 
           <input
@@ -78,14 +80,14 @@ const App: React.FC = () => {
             placeholder="Target Database Name"
             value={targetDbName}
             onChange={(e) => setTargetDbName(e.target.value)}
-            className="mb-6 px-4 py-2 border rounded w-80"
+            className="mb-6 px-4 py-2 border rounded w-full"
           />
         </div>
       </div>
 
-      {uriError && <p className="text-red-500 mb-4">{uriError}</p>}
+      {uriError && <p className="text-red-500 mb-4 text-center">{uriError}</p>}
 
-      <p className="mb-6 text-gray-700">{status}</p>
+      <p className="mb-6 text-gray-700 text-center">{status}</p>
 
       <button
         onClick={handleTransfer}
